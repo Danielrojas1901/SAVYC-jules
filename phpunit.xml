@@ -15,6 +15,9 @@
     <testsuite name="integration">
       <directory>Tests/Integration</directory>
     </testsuite>
+    <testsuite name="functional">
+      <directory>Tests/Functional</directory>
+    </testsuite>
   </testsuites>
 
   <php>
@@ -28,5 +31,10 @@
     <env name="_SEC_DB_NAME_" value="seguridadtest"/>
     <env name="_SEC_DB_USER_" value="root"/>
     <env name="_SEC_DB_PASS_" value=""/>
+
+    <!-- Selenium -->
+    <env name="SELENIUM_HUB_URL" value="http://localhost:4444"/>
+    <env name="APP_BASE_URL" value="http://localhost/sistema-act"/>
+    <env name="BROWSER" value="chrome"/>
   </php>
 </phpunit>

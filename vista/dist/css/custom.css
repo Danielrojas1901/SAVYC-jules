@@ -1,0 +1,291 @@
+/* =============================
+CSS PARA CUSTOMIZAR LA PLANTILLA
+===============================*/
+
+/* HEADER */
+.brand-text{
+    color: #ffffff;
+    font-weight: 1000;
+}
+.main-header{
+    background-color: #EDF2F4 ; /* Fondo del header */
+}
+
+.main-header .nav-link {
+    color: #222424 !important; /* Color del texto de los enlaces */
+}
+
+.main-header .nav-link:hover {
+    color:#2e2e2e !important; /* al pasar el ratón */
+}
+
+.dropdown-item.active, .dropdown-item:active{
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #8C57FF;
+}
+/* SIDEBAR */
+.main-sidebar{
+    background-color:#222424; /* Fondo del sidebar */
+    box-shadow: 0px 5px 10px rgba(167, 167, 167, 0.1);
+}
+
+/* CONTENIDO*/
+h1,h3,h4, h6{
+    font-family: 'Nunito', sans-serif !important;
+    font-weight:bold;
+}
+h2{
+    font-family: 'Nunito', sans-serif !important;
+    font-weight:800;
+}
+
+h5{
+    font-family: 'Nunito', sans-serif !important;
+    font-weight:500;
+}
+
+/* .brand-link,
+.main-sidebar .brand-link {
+    background-color: #Ec7507  ; Fondo del sidebar logo 
+    border-bottom: 1px solid #426487 ;  Color de la línea divisoria 
+}*/
+
+.main-sidebar .nav-link{
+    color:white !important ;/* Color del texto de los enlaces */
+}
+
+.main-sidebar .nav-link:hover,
+.main-sidebar .nav-item:hover i {
+    color: white  !important ;
+    font-weight: bold;
+}
+
+
+.main-sidebar .nav-icon{
+    color:white; /* Color de los íconos */
+}
+
+.main-sidebar .nav-header{
+    font-size: x-small;
+}
+
+
+
+body{
+    font-family: 'Nunito', sans-serif !important;
+    font-weight: 500;
+}
+
+.content-wrapper a{
+    color:#5271ff ; 
+    font-weight: bold;
+}
+
+.content-wrapper a:hover{
+    color: #8C57FF; 
+}
+
+.bg-primary{
+    background-color: #5271ff !important;
+}
+
+/* BOTONES*/
+.btn-primary {
+    background-color: #5271ff  !important ;
+    border-color: #5271ff !important;
+    font-weight: 700; 
+}
+.btn-primary:hover {
+    background-color: #8C57FF !important ;
+    border-color: #8C57FF !important; 
+    font-weight: 700; 
+}
+
+.btn-danger {
+    background-color: #FE4C50 !important ;
+    border-color: #ff4d4d!important;
+    font-weight: 700; 
+}
+
+.btn-danger:hover {
+    background-color: #fa3e3e !important ;
+    border-color: #ff4d4d !important; 
+    font-weight: 700; 
+}
+
+.btn-success{
+    background-color: #56C900 !important;
+    border-color: #56C900 !important;
+    font-weight: 700; 
+}
+
+.btn-success:hover{
+    background-color: #55c201 !important;
+    border-color: #56C900 !important;
+    font-weight: 700; 
+}
+
+.btn-warning{
+    background-color: #FFB400 !important;
+    color: #ffffff !important;
+    border-color: #FFB400 !important;
+    font-weight: 700; 
+}
+.btn-warning:hover{
+    background-color: #efa802 !important;
+    color: #ffffff !important;
+    border-color: #efa802 !important;
+    font-weight: 700; 
+}
+
+.btn-info {
+    background-color: #8C57FF  !important ;
+    border-color: #8C57FF !important;
+    font-weight: 700; 
+}
+.btn-info:hover {
+    background-color: #7a4cdc !important ;
+    border-color: #7a4cdc !important; 
+    font-weight: 700; 
+}
+
+.bg-success{
+    background-color: #56C900 !important;
+}
+.bg-danger{
+    background-color: #FE4C50 !important;
+}
+.bg-warning{
+    background-color: #FFB400 !important;
+}
+
+.bg-primary{
+    background-color: #5271ff !important;
+}
+
+.bg-info{
+    background-color: #8C57FF !important;
+}
+
+
+
+/* MODAL-CARD HEADER*/
+.content-wrapper .modal-header{
+    background-color: #5271ff ;
+    color: #ffffff;
+}
+
+/* MODAL-CARD HEADER*/
+.modal-header{
+    background-color: #5271ff ; /* no se de donde*/
+    color: #ffffff;
+}
+
+
+/* FOOTER*/
+.main-footer {
+    background-color:#252525 ; 
+}
+
+.main-footer p, strong{
+    color: #ffffff; 
+}
+
+.main-footer a{
+    color: #E89005; 
+    font-weight: bold;
+}
+
+/* PAGE - datatable*/
+.card-body a{
+    color: #15314e; 
+    font-weight: bold;
+}
+.card-body a:hover{
+    color: #5271ff; 
+    font-weight: bold;
+}
+
+
+
+/* LOGIN*/
+.input-group {
+    position: relative; /* Para que los iconos se posicionen correctamente */
+}
+
+.input-group .icon-password {
+    position: absolute;
+    right: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6c757d;
+    z-index: 10;
+}
+
+
+#passU + .icon-password {
+    position: absolute;
+    right: 70px; /* Ajusta la posición a la derecha solo para #passU */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6c757d;
+    z-index: 10;
+}
+
+#passU + .invalid-feedback {
+    position: absolute;
+    top: 100%; /*Coloca el mensaje justo debajo del campo*/
+    left: 0; /*Alinea el mensaje con el campo*/
+    width: 100%; /*Asegura que el mensaje ocupe el ancho del campo*/
+}
+
+#passE + .icon-password {
+    position: absolute;
+    right: 70px; /* Ajusta la posición a la derecha solo para #passU */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6c757d;
+    z-index: 10;
+}
+
+#passE + .invalid-feedback {
+    position: absolute;
+    top: 100%; /*Coloca el mensaje justo debajo del campo*/
+    left: 0; /*Alinea el mensaje con el campo*/
+    width: 100%; /*Asegura que el mensaje ocupe el ancho del campo*/
+}
+
+.login-box-msg{
+    color:#6c757d;
+    font-weight: normal;
+}
+
+.login-box{
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+th.sorting{
+    color: #222424;
+    font-weight: 800;
+}
+
+.page-item.active .page-link{
+    background-color:#222424;
+    border-color: #222424;
+}
+
+/*AGREGADO POR MAI*/
+.table-warning {
+    background-color: #fff3cd; /* Color de fondo para hoy */
+}
+.table-danger {
+    background-color: #f8d7da; /* Color de fondo para atrasado */
+}
+.table-success {
+    background-color: #5fccee; /* Color de fondo para futuro */
+}
+

@@ -8,3 +8,4 @@ prueba.php
 *.txt
 manual.docx
 .phpunit.result.cache
+/screenshots/Tests/**/*

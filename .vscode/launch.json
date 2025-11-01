@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "PHPUnit (grupo Caja)",
+            "type": "php",
+            "request": "launch",
+            "program": "C:\\xampp\\php\\php.exe",
+            "args": [
+                "-dxdebug.start_with_request=yes",
+                "vendor\\phpunit\\phpunit\\phpunit",
+                "--group",
+                "Caja"
+            ],
+            "cwd": "C:\\xampp\\htdocs\\savyc",
+            "port": 9003
+        },
+        {
+            "name": "Escuchar Xdebug (genérico)",
+            "type": "php",
+            "request": "launch",
+            "port": 9003
+        }
+    ]
+}
