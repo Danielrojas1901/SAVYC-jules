@@ -1,0 +1,40 @@
+{
+    "name": "liliani/savyc",
+    "description": "reporte",
+    "type": "proyect",
+    "require": {
+        "spipu/html2pdf": "5.2.8",
+        "phpoffice/phpspreadsheet": "^2.1",
+        "smalot/pdfparser": "^2.12",
+        "cboden/ratchet": "^0.4.4"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Modelo\\": "modelo/",
+            "Reportes\\": "tests/unit/Reportes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "Tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test:unit": "phpunit --testsuite unit",
+        "test:int": "phpunit --testsuite integration"
+    },
+    "authors": [
+        {
+            "name": "quesera"
+        }
+    ],
+    "require-dev": {
+<<<<<<< HEAD
+        "phpunit/phpunit": "10.0"
+=======
+        "phpunit/phpunit": "^11.0"
+>>>>>>> a2faeb5a64fadeac54edd3b73720678aa7346e8f
+    }
+}

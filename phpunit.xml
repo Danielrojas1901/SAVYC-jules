@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.5/phpunit.xsd"
+    bootstrap="vendor/autoload.php"
+    colors="true"
+    cacheDirectory=".phpunit.cache"
+    failOnRisky="true"
+    failOnWarning="true"
+>
+  <testsuites>
+    <testsuite name="unit">
+      <directory>Tests/Unit</directory>
+    </testsuite>
+    <testsuite name="integration">
+      <directory>Tests/Integration</directory>
+    </testsuite>
+  </testsuites>
+
+  <php>
+    <env name="_DB_HOST_" value="127.0.0.1"/>
+    <env name="_DB_NAME_" value="savycplustest"/>
+    <env name="_DB_USER_" value="root"/>
+    <env name="_DB_PASS_" value=""/>
+
+    <!-- BD de seguridad (tests) -->
+    <env name="_SEC_DB_HOST_" value="localhost"/>
+    <env name="_SEC_DB_NAME_" value="seguridadtest"/>
+    <env name="_SEC_DB_USER_" value="root"/>
+    <env name="_SEC_DB_PASS_" value=""/>
+  </php>
+</phpunit>

@@ -1,0 +1,10 @@
+/vendor/
+phperror.log
+config/config.php
+prueba.php
+.env
+*.md
+*.csv
+*.txt
+manual.docx
+.phpunit.result.cache
