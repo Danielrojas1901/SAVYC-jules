@@ -1,0 +1,57 @@
+name: Recrear BD
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'savyc.sql'
+  workflow_dispatch:
+
+jobs:
+  update-mysql:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repo
+        uses: actions/checkout@v4
+
+      - name: Configurar clave SSH
+        env:
+          SSH_KEY: ${{ secrets.TRAYECTO3_KEY }}
+        run: |
+          echo "$SSH_KEY" > private_key.pem
+          chmod 600 private_key.pem
+
+      - name: Verificar existencia de archivo SQL
+        run: |
+          ls -l *.sql || (echo "❌ Archivo SQL no encontrado" && exit 1)
+
+      - name: 📤 Subir archivo SQL al VPS
+        env:
+          SSH_USER: ${{ secrets.TRAYECTO3_USER }}
+          SSH_HOST: ${{ secrets.TRAYECTO3_HOST }}
+        run: |
+          echo "📁 Asegurando existencia del directorio remoto /home/$SSH_USER/sql..."
+          ssh -i private_key.pem -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "mkdir -p /home/$SSH_USER/sql"
+
+          echo "📤 Subiendo savyc.sql al VPS..."
+          scp -i private_key.pem -o StrictHostKeyChecking=no savyc.sql $SSH_USER@$SSH_HOST:/home/$SSH_USER/sql/
+
+      - name: 🧩 Conectar al VPS y actualizar MySQL
+        env:
+          SSH_USER: ${{ secrets.TRAYECTO3_USER }}
+          SSH_HOST: ${{ secrets.TRAYECTO3_HOST }}
+          MYSQL_USER: ${{ secrets.TRAYECTO3_MYSQL_USER }}
+          MYSQL_PASS: ${{ secrets.TRAYECTO3_MYSQL_PASS }}
+          MYSQL_DB: ${{ secrets.TRAYECTO3_MYSQL_DB }}
+        run: |
+          ssh -i private_key.pem -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST << EOF
+            echo "🗑️  Borrando base de datos si existe..."
+            mysql -u"$MYSQL_USER" -p"$MYSQL_PASS" -e "DROP DATABASE IF EXISTS $MYSQL_DB; CREATE DATABASE $MYSQL_DB;"
+            echo "📥 Importando savyc.sql..."
+            mysql -u"$MYSQL_USER" -p"$MYSQL_PASS" "$MYSQL_DB" < /home/$SSH_USER/sql/savyc.sql
+          EOF
+
+      - name: Limpiar clave privada
+        run: rm -f private_key.pem
