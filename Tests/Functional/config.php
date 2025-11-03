@@ -9,7 +9,7 @@
 
 return [
         // ajustes de aplicacion
-        "base_url" => $_ENV["APP_BASE_URL"] ?? "http://localhost/sistema-act",
+        "base_url" => $_ENV["APP_BASE_URL"] ?? "http://localhost/sistema/sistema",
 
         // selenium
         "selenium_hub_url" =>

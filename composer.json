@@ -6,7 +6,8 @@
                 "spipu/html2pdf": "5.2.8",
                 "phpoffice/phpspreadsheet": "^2.1",
                 "smalot/pdfparser": "^2.12",
-                "cboden/ratchet": "^0.4.4"
+                "cboden/ratchet": "^0.4.4",
+                "facebook/webdriver": "*"
         },
         "license": "MIT",
         "autoload": {

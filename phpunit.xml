@@ -22,19 +22,19 @@
 
   <php>
     <env name="_DB_HOST_" value="127.0.0.1"/>
-    <env name="_DB_NAME_" value="savycplustest"/>
+    <env name="_DB_NAME_" value="savycplus"/>
     <env name="_DB_USER_" value="root"/>
     <env name="_DB_PASS_" value=""/>
 
     <!-- BD de seguridad (tests) -->
     <env name="_SEC_DB_HOST_" value="localhost"/>
-    <env name="_SEC_DB_NAME_" value="seguridadtest"/>
+    <env name="_SEC_DB_NAME_" value="securityapp"/>
     <env name="_SEC_DB_USER_" value="root"/>
     <env name="_SEC_DB_PASS_" value=""/>
 
     <!-- Selenium -->
     <env name="SELENIUM_HUB_URL" value="http://localhost:4444"/>
-    <env name="APP_BASE_URL" value="http://localhost/sistema-act"/>
+    <env name="APP_BASE_URL" value="http://localhost/sistema/sistema"/>
     <env name="BROWSER" value="chrome"/>
   </php>
 </phpunit>
