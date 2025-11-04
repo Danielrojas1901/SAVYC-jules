@@ -257,4 +257,45 @@ abstract class SeleniumTest extends TestCase
                 $pageSource = $this->driver->getPageSource();
                 $this->assertStringContainsString($text, $pageSource);
         }
+
+        /**
+     * Espera hasta que no existan elementos que coincidan con $by o estén ocultos.
+     * Devuelve true si desaparecen dentro del timeout, false en caso contrario.
+     *
+     * @param \Facebook\WebDriver\WebDriverBy $by
+     * @param int $timeout segundos
+     * @return bool
+     */
+    protected function waitForElementToDisappear(\Facebook\WebDriver\WebDriverBy $by, int $timeout = 5): bool
+    {
+        $end = time() + max(1, $timeout);
+        while (time() <= $end) {
+            try {
+                $elements = $this->driver->findElements($by);
+                if (count($elements) === 0) {
+                    return true;
+                }
+                $allHidden = true;
+                foreach ($elements as $el) {
+                    try {
+                        if ($el->isDisplayed()) {
+                            $allHidden = false;
+                            break;
+                        }
+                    } catch (\Throwable $_) {
+                        // si el elemento desapareció entre la búsqueda y el isDisplayed, ignorar
+                        continue;
+                    }
+                }
+                if ($allHidden) {
+                    return true;
+                }
+            } catch (\Throwable $_) {
+                // si hay un error al buscar, asumir que desapareció
+                return true;
+            }
+            usleep(200000); // 200ms
+        }
+        return false;
+    }
 }

@@ -1,1 +1,1 @@
-{"version":2,"defects":[],"times":{"Tests\\Functional\\LoginTest::testLoginExitoso":15.096}}
+{"version":2,"defects":{"Tests\\Functional\\VentaTest::testRechazaVentaCreditoConFechaVencida":7,"Tests\\Functional\\VentaTest::testRechazaVentaCreditoConFechaVencidaVariante":7,"Tests\\Functional\\VentaTest::testRechazaVentaSinClienteObligatorio":8},"times":{"Tests\\Functional\\LoginTest::testLoginExitoso":17.812,"Tests\\Functional\\VentaTest::testRechazaVentaCreditoConFechaVencida":18.122,"Tests\\Functional\\VentaTest::testRechazaVentaCreditoConFechaVencidaVariante":14.163}}
